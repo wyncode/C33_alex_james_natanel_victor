@@ -13,3 +13,4 @@ Example of embedded image in Markdown in README.md:
 ![](readme_assets/images/5_teachers_signup.jpg)
 ![](readme_assets/images/6_teachers_dashboard.jpg)
 ![](readme_assets/images/5_teachers_calendar.jpg)
+![](readme_assets/images/erd_teachme.jpg)
