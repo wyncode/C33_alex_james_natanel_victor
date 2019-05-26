@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_141514) do
+ActiveRecord::Schema.define(version: 2019_05_26_160723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "description"
+    t.string "start_time"
+    t.string "end_time"
+    t.string "location"
+    t.integer "attendees_number"
+    t.string "duration"
+    t.string "student_requirements"
+    t.string "supplied_by_teacher"
+    t.string "comments"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "profile_type"
+    t.string "description"
+    t.string "skills"
+    t.string "availability"
+    t.string "education_level"
+    t.string "certifications"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comments"
+    t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_reviews_on_profile_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -29,4 +69,8 @@ ActiveRecord::Schema.define(version: 2019_05_26_141514) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "lessons", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "reviews", "profiles"
+  add_foreign_key "reviews", "users"
 end
