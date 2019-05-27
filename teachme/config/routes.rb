@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'lessons#index'
   resources :reviews
   resources :profiles
   resources :lessons
