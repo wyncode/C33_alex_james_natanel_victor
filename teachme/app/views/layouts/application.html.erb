@@ -26,6 +26,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to "Lessons", root_path, class: "navbar-brand" %>
+      <%= link_to "Users", users_path, class: "navbar-brand" %>
+    </nav>
+    <% if notice %>
+      <div class="alert alert-primary alert-dismissible fade show">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
