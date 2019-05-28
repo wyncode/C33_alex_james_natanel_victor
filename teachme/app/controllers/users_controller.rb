@@ -22,13 +22,12 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "User created"
+    else
+        flash[:warning] = "Invalid email or password"
+        redirect_to '/signup'
     end
   end
 

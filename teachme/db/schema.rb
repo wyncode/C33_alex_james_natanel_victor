@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_05_26_160723) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
-    t.string "password"
+    t.string "password_digest"
     t.string "address"
     t.string "city"
     t.string "state"
