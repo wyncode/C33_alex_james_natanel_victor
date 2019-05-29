@@ -1,5 +1,9 @@
-<h1>New User</h1>
+<div class="container-fluid">
 
-<%= render 'form', user: @user %>
+  <h1>Sign-Up</h1>
 
-<%= link_to 'Back', users_path %>
+  <%= render 'form', user: @user %>
+
+  <%= link_to '<button type="button" class="btn btn-primary">Sign-in</button>'.html_safe, root_path %>
+
+</div>
