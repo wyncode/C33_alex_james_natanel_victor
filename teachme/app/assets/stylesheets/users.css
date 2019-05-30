@@ -1,6 +1,18 @@
-.user {
+/* .user {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+} */
+
+#hero-holder {
+  background-image: linear-gradient(#E6DADA, #274046);
+}
+
+
+#sign-up-hero {
+  background-image: url('users_placeholder.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
