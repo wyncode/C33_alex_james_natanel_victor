@@ -1,10 +1,88 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Lessons</h1>
-<%= render "lessons/lessons" %>
-<%= stylesheet_link_tag("/lessons.css") %>
+<!-- <%= render "lessons/lessons" %> -->
+<!-- <%= stylesheet_link_tag("/lessons.css") %> -->
 
-<table>
+<% @lessons.each do |lesson| %>
+
+<div class="lesson-flex">
+  <div class="lessons">
+    <h5><%= lesson.description %></h5>
+    <%= image_tag('img1.jpg', class: 'images') %>
+    <div class="text">
+    <%= lesson.location %> <br>
+    <%= lesson.attendees_number %> <br>
+    <%= lesson.duration %> <br>
+    Enjoy quality time with peers.
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+  <!-- <div class="lessons">
+    <h5>Personal Yoga Classes</h5>
+    <%= image_tag('img1.jpg', class: 'images') %>
+    <div class="text">
+    What you will learn: <br>
+    Manage your stress levels. <br>
+    Connect with your spiritual self. <br>
+    Enjoy quality time with peers.
+    </div>
+  </div>
+  <div class="lessons">
+  <h5>Personal Yoga Classes</h5>
+  <%= image_tag('img1.jpg', class: 'images') %>
+  <div class="text">
+  What you will learn: <br>
+  Manage your stress levels. <br>
+  Connect with your spiritual self. <br>
+  Enjoy quality time with peers.
+  </div>
+
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+  <div class="lesson-flex">
+
+  <div class="lessons">
+  <h5>Personal Yoga Classes</h5>
+  <%= image_tag('img1.jpg', class: 'images') %>
+  <div class="text">
+  What you will learn: <br>
+  Manage your stress levels. <br>
+  Connect with your spiritual self. <br>
+  Enjoy quality time with peers.
+  </div>
+  </div>
+  <div class="lessons">
+  <h5>Personal Yoga Classes</h5>
+  <%= image_tag('img1.jpg', class: 'images') %>
+  <div class="text">
+  What you will learn: <br>
+  Manage your stress levels. <br>
+  Connect with your spiritual self. <br>
+  Enjoy quality time with peers.
+  </div>
+  </div>
+  <div class="lessons">
+  <h5>Personal Yoga Classes</h5>
+  <%= image_tag('img1.jpg', class: 'images') %>
+  <div class="text">
+  What you will learn: <br>
+  Manage your stress levels. <br>
+  Connect with your spiritual self. <br>
+  Enjoy quality time with peers.
+  </div>
+
+  </div>
+</div> -->
+<!-- <table>
   <thead>
     <tr>
       <th>Description</th>
@@ -16,7 +94,7 @@
       <th>Student requirements</th>
       <th>Supplied by teacher</th>
       <th>Comments</th>
-      <th>User</th>
+      <th>User</th><%= lesson.attendees_number %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -42,6 +120,6 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
 <%= link_to 'New Lesson', new_lesson_path %>
