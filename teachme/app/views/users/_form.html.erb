@@ -1,69 +1,81 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div id="hero-holder" class="container-fluid">
+  <div class="row">
+    <div class="col-10 offset-1 row">
+      <div id="sign-up-hero" class="col-md-8 order-2 order-md-1">
+        welcome give us money!! 💸
+      </div>
 
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+      <%= form_with(model: user, local: true, class: 'col-md-4 order-1 order-md-2') do |form| %>
+        <% if user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:
+            </h2>
+
+            <ul>
+              <% user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="form-group">
+          <%= form.label :first_name %>
+          <%= form.text_field(:first_name, class: 'form-control form-control-sm', placeholder: 'John', required: true )%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: 'form-control form-control-sm', placeholder: 'Doe', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.text_field :email , class: 'form-control form-control-sm', placeholder: 'JohnDoe@emial.com', required: true%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :phone %>
+          <%= form.text_field :phone, class: 'form-control form-control-sm', placeholder: '555-555-5555', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password %>
+          <%= form.password_field :password, class: 'form-control form-control-sm', placeholder: 'Password', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation, class: 'form-control form-control-sm', placeholder: 'Confirm Password', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :address %>
+          <%= form.text_field :address, class: 'form-control form-control-sm', placeholder: '123 Meadow Lane', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :city %>
+          <%= form.text_field :city, class: 'form-control form-control-sm', placeholder: 'Your City', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :state %>
+          <%= form.text_field :state, class: 'form-control form-control-sm', placeholder: 'Your State', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :zip_code %>
+          <%= form.text_field :zip_code, class: 'form-control form-control-sm', placeholder: 'Your Zip Code', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.submit 'Submit', class: 'btn btn-success btn-lg' %>
+        </div>
+
+      <% end %>
+
     </div>
-  <% end %>
-
-
-  <div class="form-group">
-
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, required: true %>
   </div>
-
-  <div class="form-group">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.text_field :email, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :address %>
-    <%= form.text_field :address, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :city %>
-    <%= form.text_field :city, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :state %>
-    <%= form.text_field :state, required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :zip_code %>
-    <%= form.text_field :zip_code, required: true %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
