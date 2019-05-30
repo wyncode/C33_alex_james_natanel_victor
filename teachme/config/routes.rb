@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  root 'sessions#new'
   # resources :reviews
-  resources :lessons
+  # resources :lessons
   resources :users
   resources :profiles
+  resources :sessions
 
   get 'hello_world', to: 'hello_world#index'
   get '/signup' => 'users#new'
