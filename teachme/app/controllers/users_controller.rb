@@ -24,8 +24,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
         session[:user_id] = @user.id
-        flash[:success] = "User created"
-        redirect_to user_path(@user)
+        # flash[:success] = "User created"
+        redirect_to user_path(@user), notice: "Welcome to Teach Me"
     else
         flash[:warning] = "Invalid email or password"
         redirect_to '/signup'
