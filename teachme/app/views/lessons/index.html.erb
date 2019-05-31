@@ -2,7 +2,7 @@
 
 <h1>Lessons</h1>
 
-<!-- <%= stylesheet_link_tag("/lessons.css") %> -->
+<%= stylesheet_link_tag("/lessons.css") %>
 
 <% @lessons.each do |lesson| %>
 
@@ -19,7 +19,5 @@
 </div>
 
 <% end %>
-
-
 
 <%= link_to 'New Lesson', new_lesson_path %>
