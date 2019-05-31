@@ -36,10 +36,12 @@ end
 Lesson.all.each do |lesson|
   5.times do
     Review.create(
-      # lesson_id: lesson.id,
+      lesson_id: lesson.id,
       user_id: User.find( User.ids.sample ),
       comments: Faker::Lorem.sentences,
       rating: Faker::Number.digit,
     )
   end
 end
+
+puts "Seed complete"
