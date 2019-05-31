@@ -23,7 +23,7 @@ class LessonsTest < ApplicationSystemTestCase
     fill_in "Start time", with: @lesson.start_time
     fill_in "Student requirements", with: @lesson.student_requirements
     fill_in "Supplied by teacher", with: @lesson.supplied_by_teacher
-    fill_in "User id", with: @lesson.user_id_id
+    fill_in "User id", with: @lesson.user_id
     click_on "Create Lesson"
 
     assert_text "Lesson was successfully created"
@@ -43,7 +43,7 @@ class LessonsTest < ApplicationSystemTestCase
     fill_in "Start time", with: @lesson.start_time
     fill_in "Student requirements", with: @lesson.student_requirements
     fill_in "Supplied by teacher", with: @lesson.supplied_by_teacher
-    fill_in "User id", with: @lesson.user_id_id
+    fill_in "User id", with: @lesson.user_id
     click_on "Update Lesson"
 
     assert_text "Lesson was successfully updated"
