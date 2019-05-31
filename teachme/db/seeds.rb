@@ -6,16 +6,40 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do
-  User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    phone: Faker::PhoneNumber.phone_number,
-    password: Faker::Number.hexadecimal,
-    address: Faker::Address.building_number,
-    city: Faker::Address.city,
-    state: Faker::Address.state,
-    zip_code: Faker::Address.zip_code(state_abbreviation = 'FL')
-  )
+10.times do
+  user = User.create(
+          first_name: Faker::Name.first_name,
+          last_name: Faker::Name.last_name,
+          email: Faker::Internet.email,
+          phone: Faker::PhoneNumber.phone_number,
+          password: Faker::Number.hexadecimal,
+          address: Faker::Address.building_number,
+          city: Faker::Address.city,
+          state: Faker::Address.state,
+          zip_code: Faker::Address.zip_code(state_abbreviation = 'FL')
+        )
+  5.times do
+    Lesson.create(
+      description:,
+      start_time: ,
+      location: ,
+      attendees_number: ,
+      duration: ,
+      student_requirements: ,
+      supplied_by_teacher: ,
+      comments: ,
+      user_id: user.id
+    )
+  end
+end
+
+Lesson.all.each do |lesson|
+  5.times do
+    Review.create(
+      lesson_id: lesson.id,
+      user_id: User.find( User.ids.sample ),
+      comments: ,
+      rating: ,
+    )
+  end
 end
