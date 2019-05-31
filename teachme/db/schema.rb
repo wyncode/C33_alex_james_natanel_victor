@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 2019_05_26_160723) do
     t.integer "rating"
     t.string "comments"
     t.bigint "user_id", null: false
-    t.bigint "profile_id", null: false
+    t.bigint "lesson_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["profile_id"], name: "index_reviews_on_profile_id"
+    t.index ["lesson_id"], name: "index_reviews_on_lesson_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -71,6 +71,6 @@ ActiveRecord::Schema.define(version: 2019_05_26_160723) do
 
   add_foreign_key "lessons", "users"
   add_foreign_key "profiles", "users"
-  add_foreign_key "reviews", "profiles"
+  add_foreign_key "reviews", "lessons"
   add_foreign_key "reviews", "users"
 end
