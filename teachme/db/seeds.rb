@@ -20,14 +20,14 @@
         )
   5.times do
     Lesson.create(
-      description:,
-      start_time: ,
-      location: ,
-      attendees_number: ,
-      duration: ,
-      student_requirements: ,
-      supplied_by_teacher: ,
-      comments: ,
+      description: Faker::Lorem.sentences,
+      start_time: Faker::Time.between(DateTime.now - 1, DateTime.now),
+      location: Faker::Address.street_address,
+      attendees_number: Faker::Number.digit,
+      duration: Faker:: Time.between(DateTime.now - 1, DateTime.now),
+      student_requirements: Faker::Lorem.words,
+      supplied_by_teacher: Faker::Name,
+      comments: Faker::Lorem.sentences,
       user_id: user.id
     )
   end
@@ -36,10 +36,10 @@ end
 Lesson.all.each do |lesson|
   5.times do
     Review.create(
-      lesson_id: lesson.id,
+      # lesson_id: lesson.id,
       user_id: User.find( User.ids.sample ),
-      comments: ,
-      rating: ,
+      comments: Faker::Lorem.sentences,
+      rating: Faker::Number.digit,
     )
   end
 end
