@@ -1,23 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lessons</h1>
+<h1 id="lesson-header">Lessons</h1>
 
 <%= stylesheet_link_tag("/lessons.css") %>
 
-<% @lessons.each do |lesson| %>
-
-<div class="lesson-flex">
-  <div class="lessons">
-    <h5><%= lesson.description %></h5>
-    <%= image_tag('img1.jpg', class: 'images') %>
-    <div class="text">
-    <%= lesson.location %> <br>
-    <%= lesson.attendees_number %> <br>
-    <%= lesson.duration %> <br>
-    </div>
+<div class="lessons-main container">
+  <div class="row">
+    <% @lessons.each do |lesson| %>
+      <div class="card individual lesson col-3" >
+        <%= image_tag('lessons_placeholder', class: 'lesson image card-img-top') %>
+        <div class="card-header">
+          <h5><%= lesson.description %></h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <%= lesson.location %>
+          </p>
+          <p class="card-text">
+            <%= lesson.attendees_number %>
+          </p>
+          <p class="card-text">
+            <%= lesson.duration %>
+          </p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-<% end %>
 
 <%= link_to 'New Lesson', new_lesson_path %>
