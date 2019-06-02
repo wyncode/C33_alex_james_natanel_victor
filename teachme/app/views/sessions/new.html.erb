@@ -1,5 +1,6 @@
-<h1>Sign-in</h1>
+<h1>Teach me App</h1>
 <div id="hero-holder" class="container-fluid ">
+  <h2>Sign in</h2>
   <div class="row" >
     <div class="col-10 offset-1 row">
         <%= form_tag sessions_path do %>
@@ -12,7 +13,8 @@
         <%= password_field_tag :password%>
         </div>
         <div class="form-group ">
-        <%= submit_tag 'Log in' %> <%= link_to 'Sign-up', new_user_path(@user) %>
+        <button type="submit" class="btn btn-light">Sign in</button>
+        <button type="button" class="btn btn-light"><%= link_to 'Sign-up', new_user_path(@user) %></button>
         </div>
         <% end %>
     </div>
