@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user = User.find(session[:user_id])
+    @my_lessons = @user.lessons
   end
 
   # GET /users/new

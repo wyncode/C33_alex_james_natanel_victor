@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # validates_presence_of :first_name :last_name :email :password_digest :address :city :state :zip_code
   has_many :profiles, dependent: :destroy
   has_many :reviews
+  has_many :lessons
 
 
 end
