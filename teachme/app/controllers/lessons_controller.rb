@@ -59,7 +59,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params[:start_time] = DateTime.parse(params[:start_time])
       params.require(:lesson).permit(:description, :start_time, :end_time, :location, :attendees_number, :duration, :student_requirements, :supplied_by_teacher, :comments, :user_id)
     end
 end
