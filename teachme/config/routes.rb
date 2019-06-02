@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'sessions#new'
   # resources :reviews
-  resources :lessons
+  resources :lessons do 
+    resources :user_lessons, only: [:create]
+  end 
   resources :users
   resources :profiles
   resources :sessions
