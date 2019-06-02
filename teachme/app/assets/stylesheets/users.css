@@ -6,13 +6,24 @@
 } */
 
 #hero-holder {
-  background-image: linear-gradient(#E6DADA, #274046);
+  background-image: linear-gradient(#091D34, #133863);
+  -webkit-box-shadow: -2px 0px 5px 8px #236AB9;
+  -moz-box-shadow: -2px 0px 5px 8px #236AB9;
+  box-shadow: -2px 0px 5px 8px #236AB9;
 }
 
 
 #sign-up-hero {
-  background-image: url('users_placeholder.jpg');
+  display: grid;
+  /* background-image: linear-gradient(#236AB9, #609CE1); */
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center;
+  align-items: center;
+}
+
+#new-user-form {
+  display:grid;
+  justify-content: space-between;
+  background-image: linear-gradient(#236AB9, #609CE1);
 }
