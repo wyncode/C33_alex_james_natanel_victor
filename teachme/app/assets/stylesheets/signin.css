@@ -1,0 +1,6 @@
+#sign-in-holder {
+  background-image: linear-gradient(#091D34, #133863);
+  -webkit-box-shadow: -2px 0px 5px 8px #236AB9;
+  -moz-box-shadow: -2px 0px 5px 8px #236AB9;
+  box-shadow: -2px 0px 5px 8px #236AB9;
+}

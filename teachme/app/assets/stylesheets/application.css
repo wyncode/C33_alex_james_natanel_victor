@@ -18,10 +18,16 @@
 * {
   margin: 0;
   padding: 0;
+  color: whitesmoke;
 }
 
 body {
   margin-top: 56px;
+  background-color: #E1ECF9;
+}
+
+h1, h2 {
+  color: #091D34;
 }
 
 /* .main-content {
