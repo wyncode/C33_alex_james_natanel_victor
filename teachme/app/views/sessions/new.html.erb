@@ -1,16 +1,20 @@
-<h1>Log in</h1>
-<%= form_tag sessions_path do %>
-<p>
-<%= label_tag :email %>
-<%= text_field_tag :email, required: true %>
-</p>
-<p>
-<%= label_tag :password %>
-<%= password_field_tag :password, required: true %>
-</p>
-<p>
-<%= submit_tag 'Log in' %>
-</p>
-<% end %>
-
-<%= link_to 'Sign up', new_user_path(@user) %>
+<h1>Sign-in</h1>
+<div id="hero-holder" class="container-fluid ">
+  <div class="row" >
+    <div class="col-10 offset-1 row">
+        <%= form_tag sessions_path do %>
+        <div class="form-group">
+        <%= label_tag :email %>
+        <%= text_field_tag :email%>
+        </div>
+        <div class="form-group">
+        <%= label_tag :password %>
+        <%= password_field_tag :password%>
+        </div>
+        <div class="form-group ">
+        <%= submit_tag 'Log in' %> <%= link_to 'Sign-up', new_user_path(@user) %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
