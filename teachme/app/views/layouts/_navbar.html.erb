@@ -1,15 +1,17 @@
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-      <h5 class="text-white h4">All Lessons</h5>
+      <h5 class="text-white h4"><%= link_to 'All Lessons', lessons_path %></h5>
       <span class="text-muted">Learn something new today!</span>
     </div>
-    <div class="text-white h4"><%= link_to 'My Lessons', user_path(current_user)  %></div>
+    <%= content_tag :div, class: 'text-white h4' do %>
+      <%= link_to 'My Lessons', user_path(current_user) %>
+    <% end if current_user %>
   </div>
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <button type="button" class="btn btn-light"><%= current_user.email if current_user%></button>
+    <%= content_tag :button current_user.email, class: 'btn btn-light' if current_user %>
   </nav>
 </div>
