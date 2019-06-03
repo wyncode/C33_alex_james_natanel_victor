@@ -12,8 +12,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= content_tag :button, class: 'btn btn-light' do %>
-      <%= current_user.email if current_user%>
-    <% end if current_user %>
+    <button class='btn btn-light'> <%= current_user.email if current_user%> </button>
   </nav>
 </div>
