@@ -18,8 +18,20 @@
           state: Faker::Address.state,
           zip_code: Faker::Address.zip_code(state_abbreviation = 'FL')
         )
+end
+
+5.times do |x|
+  profile = Profile.create(
+    profile_type: '',
+    description: "Description #{x}",
+    certifications: '',
+    availability: '',
+    education_level: '',
+    skills: '',
+    user_id: x + 1
+  )
   5.times do
-    Lesson.create(
+    lesson = Lesson.create(
       description: Faker::Lorem.sentences,
       start_time: Faker::Time.between(DateTime.now - 1, DateTime.now),
       location: Faker::Address.street_address,
@@ -28,12 +40,21 @@
       student_requirements: Faker::Lorem.words,
       supplied_by_teacher: Faker::Name,
       comments: Faker::Lorem.sentences,
-      user_id: user.id
+      profile_id: profile.id
     )
+    begin
+      User.find(x + 1).lessons << lesson
+      User.find(x + 2).lessons << lesson
+    rescue
+      puts " :P "
+    end
   end
 end
 
+
+
 Lesson.all.each do |lesson|
+
   5.times do
     Review.create(
       lesson_id: lesson.id,

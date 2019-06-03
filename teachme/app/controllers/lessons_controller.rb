@@ -19,8 +19,14 @@ class LessonsController < ApplicationController
   def edit
   end
 
+  lesson = Lesson.find(params[:lesson_id])
+  user_lessons = user.lessons
+  user_lessons.push(lesson)
+  user.save
+  redirect_to user_path(user)
   # POST /lessons
   def create
+    user = User.find(params[:user_id])
     @lesson = Lesson.new(lesson_params)
 
     respond_to do |format|
@@ -51,7 +57,15 @@ class LessonsController < ApplicationController
     end
   end
 
-  private
+  def book_lesson
+    @user = current_user
+    lesson = Lesson.find(params[:lesson_id])
+    @user.lessons << lesson
+    redirect_to @user
+  end
+
+  private    user = User.find(session[:user_id])
+
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
@@ -59,6 +73,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:description, :start_time, :end_time, :location, :attendees_number, :duration, :student_requirements, :supplied_by_teacher, :comments, :user_id)
+      params.require(:lesson).permit(:description, :start_time, :end_time, :location, :attendees_number, :duration, :student_requirements, :supplied_by_teacher, :comments)
     end
 end

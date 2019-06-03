@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   root 'sessions#new'
   resources :reviews
-  resources :lessons do
-    resources :user_lessons, only: [:create]
+  resources :lessons, except: :create
+  resources :users, except: :index
+  get '/book/:lesson_id', to: 'lessons#book_lesson', as: 'book_lesson' #book_lesson_path(lesson_id: ...)
+  resources :profiles do
+    resources :lessons, only: :create
   end
-  resources :users
-  resources :profiles
   resources :sessions
 
   get '/signup' => 'users#new'

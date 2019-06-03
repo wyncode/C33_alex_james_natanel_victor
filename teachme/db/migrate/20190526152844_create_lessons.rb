@@ -10,7 +10,7 @@ class CreateLessons < ActiveRecord::Migration[6.0]
       t.string :student_requirements
       t.string :supplied_by_teacher
       t.string :comments
-      t.belongs_to :user, null: false, foreign_key: true
+      t.belongs_to :profile, null: false, foreign_key: true
 
       t.timestamps
     end
