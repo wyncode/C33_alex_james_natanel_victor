@@ -1,50 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div id="user_profile">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <div class="user_image">( ͡° ͜ʖ ͡°)</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <div class="user_details">
+    <p>
+      <strong>First name:</strong>
+      <%= @user.first_name %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @user.last_name %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @user.phone %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+    <p>
+      <strong>Password:</strong>
+      <%= @user.password %>
+    </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @user.address %>
+    </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
+    <p>
+      <strong>City:</strong>
+      <%= @user.city %>
+    </p>
 
-<p>
-  <strong>Zip code:</strong>
-  <%= @user.zip_code %>
-</p>
+    <p>
+      <strong>State:</strong>
+      <%= @user.state %>
+    </p>
 
+    <p>
+      <strong>Zip code:</strong>
+      <%= @user.zip_code %>
+    </p>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class="edit">
+    <button type="button" class="btn btn-info">
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </button>
+  </div>
+
+  <div class="back">
+    <button type="button" class="btn btn-danger">
+      <%= link_to 'Back', users_path %>
+    </button>
+  </div>
+
+</div>

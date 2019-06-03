@@ -1,3 +1,41 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container{
+  margin: 0;
+}
+
+#user_profile {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  grid-template-areas: "user_image edit" "-user_details ." "-user_details back";
+  padding-top: 15px;
+}
+
+.user_image {
+  grid-area: user_image;
+  place-self: center;
+  border: 1px solid lightgrey;
+  padding: 9em;
+  margin-bottom: 15px;
+}
+
+.user_details {
+  grid-area: -user_details;
+}
+
+.edit {
+  grid-area: edit;
+  align-self: flex-end;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
+.back {
+  grid-area: back;
+  align-self: flex-end;
+  position: relative;
+  bottom: 5em;
+  left: 1em;
+}
