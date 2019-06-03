@@ -50,12 +50,9 @@
     <strong>Lesson Duration:
     <%= @lesson.lesson_duration %> Minutes
   </p>
-  <!-- <p>
-    <strong>User:</strong>
-    <%= @lesson.user_id %>
-  </p> -->
+
 
   <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
   <%= link_to 'Go to Lessons', lessons_path %> |
-  <%= link_to 'Book', lesson_user_lessons_path(@lesson), :method => :post, class: 'btn btn-primary'  %>  
+  <%= link_to 'Book', lesson_user_lessons_path(@lesson), :method => :post, class: 'btn btn-primary'  %>
 </div>
