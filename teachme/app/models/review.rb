@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :lesson
-  #add validations for 
+  #add validations for
 end
