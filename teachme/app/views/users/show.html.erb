@@ -7,7 +7,7 @@
             <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
           </div>
           <div class="card-body pt-5">
-            <%= image_tag @user.avatar, alt: "#{@user.full_name}'s profile image", class: 'profile' %>
+            <%= image_tag ( @user.avatar.attached? ? @user.avatar : "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Kermit_the_Frog.jpg/220px-Kermit_the_Frog.jpg" ), alt: "#{@user.full_name}'s profile image", class: 'profile' %>
             <h5 class="card-title">
               <%= @user.full_name %>
             </h5>
