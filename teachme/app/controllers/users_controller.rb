@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id ])
     @my_lessons = @user.lessons
+    @my_reviews = @my_lessons.map{ |x| x.reviews }.flatten
   end
 
   # GET /users/new
