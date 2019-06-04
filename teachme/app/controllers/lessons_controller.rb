@@ -19,11 +19,6 @@ class LessonsController < ApplicationController
   def edit
   end
 
-  lesson = Lesson.find(params[:lesson_id])
-  user_lessons = user.lessons
-  user_lessons.push(lesson)
-  user.save
-  redirect_to user_path(user)
   # POST /lessons
   def create
     user = User.find(params[:user_id])
@@ -64,7 +59,7 @@ class LessonsController < ApplicationController
     redirect_to @user
   end
 
-  private    user = User.find(session[:user_id])
+  private
 
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson

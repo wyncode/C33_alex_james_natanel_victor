@@ -1,57 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="section mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <div class="card-img-block">
+            <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
+          </div>
+          <div class="card-body pt-5">
+            <%= image_tag @user.avatar, alt: "#{@user.full_name}'s profile image", class: 'profile' %>
+            <h5 class="card-title">
+              <%= @user.full_name %>
+            </h5>
+            <p class="card-text">
+              <%= @user.email %> | <%= @user.phone %>
+            </p>
+            <address>
+              <%= @user.address %> <br>
+              <%= @user.city %> - <%= @user.state %>, <%= @user.zip_code %>
+            </address>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'Edit Profile', edit_user_path(@user) %> |
+            <%= link_to 'Teach a new Lesson', new_lesson_path %>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <h5 class="card-title text-center pt-2">Lessons</h5>
+          <div class="card-body pt-5">
+            <ul>
+              <% @user.lessons.each do |lesson| %>
+                <ul>
+                  <%= link_to lesson.description, lesson %>
+                </ul>
+              <% end %>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'New Lesson', new_lesson_path %>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @user.zip_code %>
-</p>
-<div>
-  <h1>Lessons</h1>
-  <% @user.lessons.each do |lesson| %>
-    <p><%= lesson.description %></p>
-  <% end %>
+    </div>
+  </div>
 </div>
-
-
-<%= link_to 'Edit Profile', edit_user_path(@user) %> |
-<%= link_to 'Teach a new Lesson', new_lesson_path %> |
-<%= link_to 'See Lessons', lessons_path %>
