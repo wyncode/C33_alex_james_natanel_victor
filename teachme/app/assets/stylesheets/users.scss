@@ -1,3 +1,52 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#hero-holder {
+  background-image: linear-gradient(#091D34, #133863);
+  min-height: 67vh;
+}
+
+#sign-up-hero {
+  background-image: url('students.jpeg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#new-user-form {
+  background-image: linear-gradient(#236AB9, #609CE1);
+}
+
+
+.profile-card-2 .card-img-block{
+  float:left;
+  width:100%;
+  height:150px;
+  overflow:hidden;
+}
+.profile-card-2 .card-body{
+  position:relative;
+}
+.profile-card-2 .profile {
+  border-radius: 50%;
+  position: absolute;
+  top: -42px;
+  left: 15%;
+  max-width: 75px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.profile-card-2 h5{
+  font-weight:600;
+  color:#007bff;
+}
+.profile-card-2 .card-text{
+  font-weight:300;
+  font-size:15px;
+}
+
+.bg-semitransparent {
+  background-color: rgba(200, 200, 200, .5)
+}

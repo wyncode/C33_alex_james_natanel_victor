@@ -2,17 +2,13 @@
 
 <h1 id="lesson-header">Lessons</h1>
 
-<%= stylesheet_link_tag("/lessons.css") %>
-
 <div class="lessons-main container">
   <div class="row">
     <% @lessons.each do |lesson| %>
-      <div class="card individual lesson col-3" >
-        <%= image_tag('lessons_placeholder', class: 'lesson image card-img-top') %>
-        <div class="card-header">
-          <h5><%= lesson.description %></h5>
-        </div>
+      <div class="card individual lesson col-3 mb-2" >
+        <%= image_tag('http://lorempixel.com/300/200/', class: 'lesson image card-img-top') %>
         <div class="card-body">
+          <h5 class="card-title"><%= lesson.description %></h5>
           <p class="card-text">
             <%= lesson.location %>
           </p>
@@ -28,5 +24,3 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to 'New Lesson', new_lesson_path %>

@@ -5,6 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.create(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: "test@email.com",
+        phone: Faker::PhoneNumber.phone_number,
+        password: "password",
+        address: Faker::Address.building_number,
+        city: Faker::Address.city,
+        state: Faker::Address.state,
+        zip_code: Faker::Address.zip_code(state_abbreviation = 'FL')
+      )
 
 10.times do
   user = User.create(
@@ -24,22 +35,24 @@ end
   profile = Profile.create(
     profile_type: '',
     description: "Description #{x}",
-    certifications: '',
+    certifications: "Certification #{x}",
     availability: '',
-    education_level: '',
-    skills: '',
+    education_level: "Education Level #{x}",
+    skills: "Skill #{x}",
     user_id: x + 1
   )
   5.times do
+    s_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
+    sentence = Faker::Lorem.sentences
     lesson = Lesson.create(
-      description: Faker::Lorem.sentences,
-      start_time: Faker::Time.between(DateTime.now - 1, DateTime.now),
+      description: sentence.first ,
+      start_time: s_time,
       location: Faker::Address.street_address,
       attendees_number: Faker::Number.digit,
-      duration: Faker:: Time.between(DateTime.now - 1, DateTime.now),
+      end_time: s_time + 2.hours,
       student_requirements: Faker::Lorem.words,
       supplied_by_teacher: Faker::Name,
-      comments: Faker::Lorem.sentences,
+      comments: sentence.last,
       profile_id: profile.id
     )
     begin
@@ -59,7 +72,7 @@ Lesson.all.each do |lesson|
     Review.create(
       lesson_id: lesson.id,
       user_id: User.find( User.ids.sample ),
-      comments: Faker::Lorem.sentences,
+      comments: Faker::Lorem.sentences.first,
       rating: Faker::Number.digit,
     )
   end
