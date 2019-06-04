@@ -21,7 +21,7 @@
           </div>
           <div class="card-footer">
             <%= link_to 'Edit Profile', edit_user_path(@user) %> |
-            <%= link_to 'Teach a new Lesson', new_lesson_path %>
+            <%= link_to 'Create Teacher Profile', new_profile_path %>
           </div>
         </div>
       </div>
@@ -50,10 +50,8 @@
           <h5 class="card-title text-center pt-2">Reviews</h5>
           <div class="card-body pt-5">
             <%= render  "reviews/index",  reviews: @my_reviews %>
-
           </div>
           <div class="card-footer">
-
           </div>
         </div>
       </div>
