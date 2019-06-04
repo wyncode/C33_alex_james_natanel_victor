@@ -21,7 +21,7 @@
           </div>
           <div class="card-footer">
             <%= link_to 'Edit Profile', edit_user_path(@user) %> |
-            <%= link_to 'Teach a new Lesson', new_lesson_path %>
+            <%= link_to 'Create Teacher Profile', new_profile_path %>
           </div>
         </div>
       </div>
@@ -40,6 +40,24 @@
           </div>
           <div class="card-footer">
             <%= link_to 'New Lesson', new_lesson_path %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <h5 class="card-title text-center pt-2">Profiles</h5>
+          <div class="card-body pt-5">
+            <ul>
+              <% @user.profiles.each do |profile| %>
+                <ul>
+                  <%= link_to profile.description, profile %>
+                </ul>
+              <% end %>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'New Profile', new_profile_path %>
           </div>
         </div>
       </div>

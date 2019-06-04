@@ -21,6 +21,7 @@ class LessonsController < ApplicationController
 
   # POST /lessons
   def create
+
     user = User.find(params[:user_id])
     @lesson = Lesson.new(lesson_params)
 
