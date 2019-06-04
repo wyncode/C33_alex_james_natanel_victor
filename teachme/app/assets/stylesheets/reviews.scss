@@ -1,3 +1,22 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.form-control {
+  background: rgb(235, 235, 238);
+  max-width: 600px;
+  min-height: 200px;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
