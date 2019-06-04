@@ -41,3 +41,7 @@ body {
 .chalk-font {
   font-family: 'Fredericka the Great', cursive;
 }
+
+.form-text-color {
+  color: whitesmoke;
+}
