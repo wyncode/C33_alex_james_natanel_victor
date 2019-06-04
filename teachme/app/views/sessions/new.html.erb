@@ -1,7 +1,7 @@
 <div id="hero-holder" class="container-fluid pt-5">
   <div class="row ">
     <div class="col-md-5 offset-md-1 text-light">
-      <h1 class="text-light text-center">Log In</h1>
+      <h1 class="text-light text-center chalk-font">Log In</h1>
       <%= form_tag sessions_path, class: "mb-5" do %>
         <div class="form-group">
           <%= label_tag :email %>
@@ -11,15 +11,23 @@
           <%= label_tag :password %>
           <%= password_field_tag :password, nil, class: 'form-control'%>
         </div>
-        <button type="submit" class="btn btn-light">Log In</button>
-        <%= link_to 'Sign-up', new_user_path, class: 'btn btn-link' %>
+        <button
+          type="submit"
+          class="btn btn-light">
+          Log In
+        </button>
+        <button
+          class="btn btn-light">
+          <%= link_to 'Sign-up', new_user_path %>
+        </button>
+
       <% end %>
     </div>
     <div class="col-md-5">
       <div class="rounded landing-jumbotron w-100" ></div>
       <div class="jumbotron text-center">
-        <h1 class="display-4">Welcome to TeachMe</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, sint quod eos vero, consectetur cumque nulla hic tempore perferendis maxime reprehenderit nostrum aut numquam recusandae alias magnam praesentium nemo voluptatem.</p>
+        <h1 class="display-4 chalk-font">Welcome to TeachMe</h1>
+        <p class="lead chalk-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, sint quod eos vero, consectetur cumque nulla hic tempore perferendis maxime reprehenderit nostrum aut numquam recusandae alias magnam praesentium nemo voluptatem.</p>
       </div>
     </div>
   </div>

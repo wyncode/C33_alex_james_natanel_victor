@@ -23,11 +23,13 @@
 body {
   padding-top: 43px;
   min-height: 100vh;
+  /* background-image: url(/assets/chalkboard.jpg); */
 }
 
 #hero-holder {
   min-height: calc(100vh - 50px);
   min-width: 100vw;
+  background-image: url(/assets/chalkboard.jpg);
 }
 
 .landing-jumbotron {
@@ -35,4 +37,8 @@ body {
   background-size: cover;
   background-position: center;
   height: 340px;
+}
+
+.chalk-font {
+  font-family: 'Fredericka the Great', cursive;
 }
