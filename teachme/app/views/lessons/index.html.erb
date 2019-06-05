@@ -6,7 +6,7 @@
   <div class="row">
     <% @lessons.each do |lesson| %>
       <div class="card individual lesson col-3 mb-2" >
-        <%= image_tag('http://lorempixel.com/300/200/', class: 'lesson image card-img-top') %>
+            <%= image_tag ( lesson.image.attached? ? lesson.image : "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Kermit_the_Frog.jpg/220px-Kermit_the_Frog.jpg" ), alt: "#{lesson.description}'s lesson image", class: 'lesson image card-img-top' %>
         <div class="card-body">
           <h5 class="card-title"><%= lesson.description %></h5>
           <p class="card-text">
