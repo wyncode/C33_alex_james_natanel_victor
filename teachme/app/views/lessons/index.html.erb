@@ -10,15 +10,15 @@
         <div class="card-body">
           <h5 class="card-title"><%= lesson.description %></h5>
           <p class="card-text">
-            <%= lesson.location %>
+            Location: <%= lesson.location %>
           </p>
           <p class="card-text">
-            <%= lesson.attendees_number %>
+            Desc: <%= lesson.description %>
           </p>
           <p class="card-text">
-            <%= lesson.duration %>
+            Duration: <%= lesson.duration %>
           </p>
-          <%= link_to 'Book Lesson', lesson_path(lesson) %>
+          <%= link_to 'Book Lesson', lesson_path(lesson), class: 'btn btn-primary' %>
         </div>
       </div>
     <% end %>
