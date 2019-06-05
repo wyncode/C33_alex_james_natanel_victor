@@ -2,23 +2,23 @@
 
 <p>
   <strong>Rating:</strong>
-  <%= @review.rating %>
+  <%= @reviews.rating %>
 </p>
 
 <p>
   <strong>Comments:</strong>
-  <%= @review.comments %>
+  <%= @reviews.comments %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @review.user_id %>
+  <%= @reviews.user_id %>
 </p>
 
 <p>
   <strong>Profile:</strong>
-  <%= @review.profile_id %>
+  <%= @reviews.profile_id %>
 </p>
 
-<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Edit', edit_reviews_path(@reviews) %> |
 <%= link_to 'Back', reviews_path %>

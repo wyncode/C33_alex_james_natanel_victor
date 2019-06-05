@@ -14,7 +14,7 @@
           <%= link_to 'Lessons', lessons_path, class: 'nav-link' %>
         </li>
         <li class="nav-item <%= 'active' if request.path == "/" %>">
-          <a class="nav-link" href="#">Teaching Profiles</a>
+          <%= link_to 'Teacher Profiles', profile_path(current_user), class: 'nav-link' %>
         </li>
       </ul>
     <% end %>
