@@ -1,3 +1,23 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.teacher-profile {
+  padding: 16px;
+}
+
+.profile-lessons {
+  height: 510px;
+  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.profile-description {
+  display: grid;
+  align-content: space-evenly;
+}
+
+.prof-description-items {
+
+}
