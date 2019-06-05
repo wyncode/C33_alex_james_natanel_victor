@@ -12,7 +12,8 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    @lesson = Lesson.new
+    @profile = Profile.find(params[:profile_id])
+    @lesson = @profile.lessons.new
   end
 
   # GET /lessons/1/edit
@@ -22,7 +23,6 @@ class LessonsController < ApplicationController
   # POST /lessons
   def create
 
-    user = User.find(params[:user_id])
     @lesson = Lesson.new(lesson_params)
 
     respond_to do |format|
@@ -69,6 +69,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:description, :start_time, :end_time, :location, :attendees_number, :duration, :student_requirements, :supplied_by_teacher, :comments)
+      params.require(:lesson).permit(:description, :start_time, :end_time, :location, :attendees_number, :duration, :student_requirements, :supplied_by_teacher, :comments, :profile_id, :image)
     end
 end

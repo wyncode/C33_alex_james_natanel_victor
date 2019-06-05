@@ -6,19 +6,19 @@
   <div class="row">
     <% @lessons.each do |lesson| %>
       <div class="card individual lesson col-3 mb-2" >
-        <%= image_tag('http://lorempixel.com/300/200/', class: 'lesson image card-img-top') %>
+            <%= image_tag ( lesson.image.attached? ? lesson.image : "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" ), alt: "#{lesson.description}'s lesson image", class: 'lesson image card-img-top' %>
         <div class="card-body">
           <h5 class="card-title"><%= lesson.description %></h5>
           <p class="card-text">
-            <%= lesson.location %>
+            Location: <%= lesson.location %>
           </p>
           <p class="card-text">
-            <%= lesson.attendees_number %>
+            Desc: <%= lesson.description %>
           </p>
           <p class="card-text">
-            <%= lesson.duration %>
+            Duration: <%= lesson.duration %>
           </p>
-          <%= link_to 'Book Lesson', lesson_path(lesson) %>
+          <%= link_to 'Book Lesson', lesson_path(lesson), class: 'btn btn-primary' %>
         </div>
       </div>
     <% end %>
