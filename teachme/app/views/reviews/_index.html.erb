@@ -8,15 +8,13 @@
       <h4 class="comments">Comments</h4>
     </div> -->
 
-  <div class="review">
-    <% reviews.each do |review| %>
+  <% reviews.each do |review| %>
+    <div class="review">
       <p class="avatar">( ͡° ͜ʖ ͡°)</p>
       <p class="user_name"><%= review.user.full_name %></p>
       <p class="lesson_name"><%= review.lesson.description%></p>
       <p class="rating"><%= review.rating %></p>
       <p class="comments"><%= review.comments %></p>
     </div>
-    <% end %>
-</div>
-
-<br>
+  <% end %>
+<!-- </div> -->
