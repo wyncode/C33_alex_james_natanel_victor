@@ -1,0 +1,21 @@
+.navbar {
+  height: 6em;
+}
+
+.navbar-brand {
+  font-size: 3em;
+  padding: 15px;
+
+  &:hover {
+    padding: 15px;
+  }
+}
+
+.navbar-nav {
+  font-size: 2em;
+}
+
+.navbar-text{
+  font-size: 2em;
+  padding: 10px;
+}
