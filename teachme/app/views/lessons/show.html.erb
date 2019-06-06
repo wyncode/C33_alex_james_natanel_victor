@@ -54,5 +54,5 @@
 
   <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
   <%= link_to 'Go to Lessons', lessons_path %> |
-  <%= link_to 'Book', book_lesson_path(@lesson), :method => :post, class: 'btn btn-primary' unless @lesson.profile.user == @user %>
+  <%= link_to 'Book', book_lesson_path(@lesson), :method => :post, class: 'btn btn-primary' unless @lesson.profile.user == current_user %>
 </div>
