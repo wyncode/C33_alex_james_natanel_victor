@@ -1,6 +1,7 @@
 <div class="section mt-5">
   <div class="container">
     <div class="row">
+      <!-- User Info  -->
       <div class="col-md-6">
         <div class="card profile-card-2">
           <div class="card-img-block">
@@ -24,7 +25,37 @@
           </div>
         </div>
       </div>
+      <!-- Calendar -->
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <%= react_component "Calendar" %>
+          <div class="card-footer">
+            <span class="calendar-footer"></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="row mt-4">
+      <!-- Profiles -->
+      <div class="col-md-6">
+      <div class="card profile-card-2">
+        <h5 class="card-title text-center pt-2">Profiles</h5>
+        <div class="card-body pt-5">
+          <ul>
+            <% @user.profiles.each do |profile| %>
+            <ul>
+              <%= link_to profile.description, profile %>
+            </ul>
+            <% end %>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'New Profile', new_profile_path %>
+        </div>
+      </div>
+      </div>
+      <!-- Lessons -->
       <div class="col-md-6">
         <div class="card profile-card-2">
           <h5 class="card-title text-center pt-2">Lessons</h5>
@@ -42,31 +73,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card profile-card-2">
-          <h5 class="card-title text-center pt-2">Profiles</h5>
-          <div class="card-body pt-5">
-            <ul>
-              <% @user.profiles.each do |profile| %>
-                <ul>
-                  <%= link_to profile.description, profile %>
-                </ul>
-              <% end %>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <%= link_to 'New Profile', new_profile_path %>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <%= react_component "Calendar" %>
-      </div>
     </div>
 
-
     <div class="row mt-4">
+      <!-- Reviews -->
       <div class="col-12">
         <div class="card profile-card-2">
           <h5 class="card-title text-center pt-2">Reviews</h5>
@@ -75,6 +85,7 @@
           </div>
           <div class="card-footer">
         </div>
+      </div>
       </div>
     </div>
   </div>
