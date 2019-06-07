@@ -4,7 +4,6 @@ class LessonsController < ApplicationController
   # GET /lessons
   def index
     @lessons = Lesson.all
-    @lessons = Lesson.joins(profile: :user).where.not(profiles:{user_id:current_user.id}) if current_user
   end
 
   # GET /lessons/1
@@ -61,6 +60,12 @@ class LessonsController < ApplicationController
     redirect_to @user
   end
 
+  def delete_lesson
+    @user = current_user
+    lesson = Lesson.find(params[:lesson_id])
+    @user.lessons.delete
+    redirect_to @user
+  end
   private
 
     # Use callbacks to share common setup or constraints between actions.
