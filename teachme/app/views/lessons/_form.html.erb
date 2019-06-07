@@ -1,4 +1,4 @@
-<div id="hero-holder" class="container-fluid pt-5">
+<div id="hero-holder" class="container-fluid pt-5 text-light">
   <h1 class="p-2 text-center text-light m-0 chalk-font">Create New Lesson</h1>
   <div class="row">
     <div class="col-10 offset-1 row">
@@ -6,7 +6,7 @@
         <div id="sign-up-hero"></div>
       </div>
 
-      <%= form_with(model: lesson, local: true, url:profile_lessons_path(current_user)) do |form| %>
+      <%= form_with(model: lesson, local: true, class: 'col-md-4 order-1 order-md-2 p-2 text-light', url:profile_lessons_path(current_user)) do |form| %>
         <% if lesson.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
@@ -18,7 +18,7 @@
             </ul>
           </div>
         <% end %>
-      
+
         <div class="form-group">
           <%= form.label :image %>
           <%= form.file_field(:image, class: 'form-control form-control-sm' )%>
@@ -68,7 +68,7 @@
           <%= form.label :profile_id %>
           <%= form.hidden_field :profile_id %>
         </div>
-      
+
         <div class="actions">
           <%= form.submit 'Create Profile', class: 'btn btn-block btn-primary'%>
         </div>
