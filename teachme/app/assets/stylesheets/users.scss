@@ -16,11 +16,12 @@
 .profile-card-2 .card-img-block{
   float:left;
   width:100%;
-  height:150px;
+  height:200px;
   overflow:hidden;
 }
 .profile-card-2 .card-body{
   position:relative;
+  height: 19em;
 }
 .profile-card-2 .profile {
   border-radius: 50%;
@@ -43,4 +44,8 @@
 
 .bg-semitransparent {
   background-color: rgba(200, 200, 200, .5)
+}
+
+.calendar-footer {
+  padding: 1em;
 }
