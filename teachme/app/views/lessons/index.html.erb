@@ -6,7 +6,7 @@
   <div class="row">
     <% @lessons.each do |lesson| %>
       <div class="card individual lesson col-3 mb-2" >
-            <%= image_tag ( lesson.image.attached? ? lesson.image : "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" ), alt: "#{lesson.description}'s lesson image", class: 'lesson image card-img-top' %>
+            <%= image_tag ( lesson.image.attached? ? lesson.image : "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" ), alt: "#{lesson.description}'s lesson image", class: 'lesson image card-img-top lessons-profilepic' %>
         <div class="card-body">
           <h5 class="card-title"><%= lesson.description %></h5>
           <p class="card-text">
@@ -24,3 +24,5 @@
     <% end %>
   </div>
 </div>
+
+<%= console %>
