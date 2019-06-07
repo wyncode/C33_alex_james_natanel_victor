@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   get '/signup', to: 'users#new'
   post '/users', to: 'users#create'
+  get "user_lessons/:id", to: "users#lessons"
 end

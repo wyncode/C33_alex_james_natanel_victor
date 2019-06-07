@@ -151,7 +151,17 @@
 .calendar-events {
   height: 100%;
   padding-right: 1.5em;
-  overflow: scroll;
+  overflow: hidden;
+}
+
+.cal-lesson {
+  border-left: 10px solid transparent;
+  border-image: linear-gradient(45deg, #a63446 0%,#a63446 40%);
+  border-image-slice: 1;
+}
+
+.calendar-events .calendar-event:hover {
+  transform: scale(1.5);
 }
 
 .calendar .body .disabled {

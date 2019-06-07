@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+def lessons
+  user = User.find(params[:id])
+  render json: user.lessons.group_by{ |lesson| Date.parse(lesson.start_time).strftime("%Y-%m-%d") }
+end
+
   # GET /users/1
   def show
     @user = User.find(params[:id ])
