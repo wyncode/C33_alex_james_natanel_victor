@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1
   def show
+    @lesson = Lesson.find(params[:id ])
   end
 
   # GET /lessons/new

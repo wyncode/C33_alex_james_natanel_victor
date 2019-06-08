@@ -13,14 +13,9 @@ const Cell = props => {
     >
     <div className="calendar-events">
       {
-        props.lessons.map(lesson => {
+        props.dailyLessons.map(lesson => {
           return(
             <div key={lesson.id} className="calendar-event">
-              {
-                lesson ?
-                <s className="cal-lesson"></s> :
-                lesson.description
-              }
             </div>
           )
         })

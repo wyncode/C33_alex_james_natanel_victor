@@ -8,7 +8,26 @@ const CalendarModal = props => (
       { dateFns.format(props.selectedDate, 'dddd, MMMM Do') }
     </ModalHeader>
     <ModalBody>
-      AHHHHH!!
+    <h5>Lessons</h5>
+      <ul>
+        {
+          props.dailyLessons.map((lesson) => {
+            return(
+              <li key={lesson.id}>
+                <a href={` /lessons/${lesson.id}`}>
+                  {
+                    lesson.completed ? <s>{lesson.name}</s> : lesson.name
+                  }
+                </a>
+              </li>
+            )
+          })
+        }
+        {
+          props.dailyLessons.length === 0 &&
+          <p><i>No lessons today</i></p>
+        }
+      </ul>
     </ModalBody>
   </Modal>
 )

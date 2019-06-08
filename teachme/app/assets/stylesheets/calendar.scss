@@ -115,7 +115,7 @@
   border-right: 1px solid var(--light-color);
   cursor: pointer;
   background: var(--neutral-color);
-  padding-left: 0.25em;
+  // padding-left: 0.25em;
 }
 
 .calendar .body .current {
@@ -154,15 +154,16 @@
   overflow: hidden;
 }
 
-.cal-lesson {
+.calendar-event {
   border-left: 10px solid transparent;
   border-image: linear-gradient(45deg, #a63446 0%,#a63446 40%);
   border-image-slice: 1;
+  height: inherit;
 }
 
-.calendar-events .calendar-event:hover {
-  transform: scale(1.5);
-}
+// .calendar-events .calendar-event:hover {
+//   transform: scale(1.5);
+// }
 
 .calendar .body .disabled {
   color: var(--light-color);

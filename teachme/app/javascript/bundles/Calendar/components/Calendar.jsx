@@ -41,7 +41,7 @@ componentDidMount(){
 }
 
   render(){
-    const { currentMonth, currentDate, modalOpen, selectedDate } = this.state
+    const { currentMonth, currentDate, lessons, modalOpen, selectedDate } = this.state
     return(
       <div className="calendar">
         <Header
@@ -53,13 +53,14 @@ componentDidMount(){
         <Cells
           currentMonth={currentMonth}
           currentDate={currentDate}
-          lessons={this.state.lessons}
+          lessons={lessons}
           handleDateClick={this.handleDateClick}
         />
         <CalendarModal
             modalOpen={modalOpen}
             selectedDate={selectedDate}
             closeModal={this.closeModal}
+            dailyLessons={ lessons[dateFns.format(selectedDate, 'YYYY-MM-DD')] || [] }
         />
       </div>
     )
