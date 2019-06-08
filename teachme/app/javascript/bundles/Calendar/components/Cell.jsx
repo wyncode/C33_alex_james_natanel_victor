@@ -9,6 +9,7 @@ const Cell = props => {
             ? "disabled"
             : dateFns.isSameDay(props.day, props.currentDate) ? "current" : ""
         }`}
+        onClick={ (e) => { props.handleDateClick(props.day) } }
     >
     <div className="calendar-events">
       {
