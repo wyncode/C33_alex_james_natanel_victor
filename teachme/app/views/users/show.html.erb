@@ -28,7 +28,7 @@
       <!-- Calendar -->
       <div class="col-md-6">
         <div class="card profile-card-2">
-          <%= react_component "Calendar" %>
+          <%= react_component "Calendar", props: {userId:@user.id} %>
           <div class="card-footer">
             <span class="calendar-footer"></span>
           </div>

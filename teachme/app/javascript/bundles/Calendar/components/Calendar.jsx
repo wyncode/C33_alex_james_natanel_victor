@@ -7,7 +7,8 @@ import Cells from './Cells'
 export default class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
-    currentDate: new Date()
+    currentDate: new Date(),
+    lessons:{}
   }
 
   nextMonth = () => {
@@ -22,6 +23,12 @@ export default class Calendar extends React.Component {
     })
   }
 
+componentDidMount(){
+  fetch(`/user_lessons/${this.props.userId}`)
+    .then(response => response.json())
+    .then(data => this.setState({lessons:data}))
+}
+
   render(){
     const { currentMonth, currentDate } = this.state
     return(
@@ -35,6 +42,7 @@ export default class Calendar extends React.Component {
         <Cells
           currentMonth={currentMonth}
           currentDate={currentDate}
+          lessons={this.state.lessons}
         />
       </div>
     )

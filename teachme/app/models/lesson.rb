@@ -9,4 +9,15 @@ class Lesson < ApplicationRecord
     ending_time = Time.parse(end_time)
     (ending_time - starting_time) / 60
   end
+
+  def as_json(options={})
+    {
+      id:                id,
+      name:         self.description,
+      startTime:  Date.parse(self.start_time)&.strftime('%m/%/d/%y %H:%M %P'),
+      endTime:    Date.parse(self.end_time)&.strftime('%m/%d/%y %H:%M %P' ),
+      location:     self.location
+    }
+  end
+
 end
