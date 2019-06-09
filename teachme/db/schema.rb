@@ -59,10 +59,9 @@ ActiveRecord::Schema.define(version: 2019_06_04_154824) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "profile_type"
+    t.string "profile_title"
     t.string "description"
     t.string "skills"
-    t.string "availability"
     t.string "education_level"
     t.string "certifications"
     t.bigint "user_id", null: false
