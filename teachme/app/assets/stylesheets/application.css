@@ -50,3 +50,8 @@ body {
   margin-top: 2rem;
   padding: 1rem;
 }
+
+.overflow-box {
+  overflow: scroll;
+  overflow-x: hidden;
+}
