@@ -45,7 +45,7 @@
           <ul>
             <% @user.profiles.each do |profile| %>
             <ul>
-              <%= link_to profile.description, profile %>
+              <%= link_to profile.profile_title, profile %>
             </ul>
             <% end %>
           </ul>
