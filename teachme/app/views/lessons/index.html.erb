@@ -13,12 +13,11 @@
             Location: <%= lesson.location %>
           </p>
           <p class="card-text">
-            Desc: <%= lesson.description %>
+            Description: <%= lesson.description %>
           </p>
-          <p class="card-text">
-            Duration: <%= lesson.duration %>
-          </p>
-          <%= link_to 'Book Lesson', lesson_path(lesson), class: 'btn btn-primary' %>
+        </div>
+        <div>
+          <%= link_to 'Book Lesson', lesson_path(lesson), class: 'btn btn-outline-primary btn-block' %>
         </div>
       </div>
     <% end %>

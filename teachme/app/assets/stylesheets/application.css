@@ -45,3 +45,8 @@ body {
 .form-text-color {
   color: whitesmoke;
 }
+
+.mb-2 {
+  margin-top: 2rem;
+  padding: 1rem;
+}
