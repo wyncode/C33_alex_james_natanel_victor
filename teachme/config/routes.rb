@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   post '/book/:lesson_id', to: 'lessons#book_lesson', as: 'book_lesson' #book_lesson_path(lesson_id: ...)
-  delete 'delete/:lesson_id', to: 'lessons#delete_lesson', as: 'delete_lesson' #delete_lesson_path(lesson_id: ...)
+  delete '/delete/:lesson_id', to: 'lessons#delete_lesson', as: 'delete_lesson' #delete_lesson_path(lesson_id: ...)
   resources :lessons, except: [:create, :new]
   resources :reviews
   resources :sessions, only: [:create]
