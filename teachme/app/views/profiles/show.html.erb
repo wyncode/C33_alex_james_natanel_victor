@@ -7,40 +7,30 @@
   <div class="row">
 
   <div class="profile-description col-6">
-      <h5>My Teaching Profile</h5>
+      <h5 class="chalk-font">My Teaching Profile</h5>
     <p>
       <strong>Profile type:</strong>
       <%= @profile.profile_type %>
     </p>
-
     <p>
       <strong>Description:</strong>
       <%= @profile.description %>
     </p>
-
     <p>
       <strong>Skills:</strong>
       <%= @profile.skills %>
     </p>
-
     <p>
       <strong>Availability:</strong>
       <%= @profile.availability %>
     </p>
-
     <p>
       <strong>Education level:</strong>
       <%= @profile.education_level %>
     </p>
-
     <p>
       <strong>Certifications:</strong>
       <%= @profile.certifications %>
-    </p>
-
-    <p>
-      <strong>User:</strong>
-      <%= @profile.user_id %>
     </p>
     <div>
       <%= link_to 'Edit', edit_profile_path(@profile) %> |
@@ -61,9 +51,6 @@
               </p>
               <p class="card-text">
                 Desc: <%= lesson.description %>
-              </p>
-              <p class="card-text">
-                Duration: <%= lesson.duration %>
               </p>
             </div>
           </div>
