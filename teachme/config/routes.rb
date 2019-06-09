@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
   resources :users, except: :index
   resources :profiles do
-    resources :lessons, only: [:create, :new]
+  resources :lessons, only: [:create, :new]
   end
 
   post '/book/:lesson_id', to: 'lessons#book_lesson', as: 'book_lesson' #book_lesson_path(lesson_id: ...)

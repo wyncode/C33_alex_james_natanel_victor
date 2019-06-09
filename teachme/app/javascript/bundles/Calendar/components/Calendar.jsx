@@ -3,11 +3,14 @@ import dateFns from 'date-fns'
 import Header from './Header'
 import Days from './Days'
 import Cells from './Cells'
+import CalendarModal from './CalendarModal'
 
 export default class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
     currentDate: new Date(),
+    selectedDate: new Date,
+    modalOpen: false,
     lessons:{}
   }
 
@@ -23,6 +26,14 @@ export default class Calendar extends React.Component {
     })
   }
 
+  handleDateClick = day => {
+    this.setState({ selectedDate: day, modalOpen: true })
+  }
+
+  closeModal = () => {
+    this.setState({ modalOpen: false })
+  }
+
 componentDidMount(){
   fetch(`/user_lessons/${this.props.userId}`)
     .then(response => response.json())
@@ -30,7 +41,7 @@ componentDidMount(){
 }
 
   render(){
-    const { currentMonth, currentDate } = this.state
+    const { currentMonth, currentDate, lessons, modalOpen, selectedDate } = this.state
     return(
       <div className="calendar">
         <Header
@@ -42,7 +53,14 @@ componentDidMount(){
         <Cells
           currentMonth={currentMonth}
           currentDate={currentDate}
-          lessons={this.state.lessons}
+          lessons={lessons}
+          handleDateClick={this.handleDateClick}
+        />
+        <CalendarModal
+            modalOpen={modalOpen}
+            selectedDate={selectedDate}
+            closeModal={this.closeModal}
+            dailyLessons={ lessons[dateFns.format(selectedDate, 'YYYY-MM-DD')] || [] }
         />
       </div>
     )

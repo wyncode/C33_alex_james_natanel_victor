@@ -17,7 +17,7 @@ const Cells = props => {
       days.push(
         <Cell key={day}
                   day={day} {...props}
-                  lessons={dailyLessons}/>
+                  dailyLessons={dailyLessons}/>
       )
       day = dateFns.addDays(day, 1)
     }
