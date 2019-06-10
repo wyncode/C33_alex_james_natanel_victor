@@ -33,10 +33,10 @@ end
 
 5.times do |x|
   profile = Profile.create(
-    profile_type: '',
+    profile_title: '',
     description: "Description #{x}",
     certifications: "Certification #{x}",
-    availability: '',
+    # availability: '',
     education_level: "Education Level #{x}",
     skills: "Skill #{x}",
     user_id: x + 1
