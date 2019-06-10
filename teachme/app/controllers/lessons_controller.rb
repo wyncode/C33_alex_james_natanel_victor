@@ -65,7 +65,7 @@ class LessonsController < ApplicationController
   def delete_lesson
     @user = current_user
     lesson = Lesson.find(params[:lesson_id])
-    @user.lessons.destroy
+    @user.lessons.delete(lesson)
     redirect_to @user
   end
   private
